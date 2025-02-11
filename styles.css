@@ -47,11 +47,11 @@ html, body {
 nav ul {
     list-style: none;
     margin: 0;
-    padding: 0 50px; /* Razmak levo i desno od ivica */
+    padding: 0 100px; /* Razmak levo i desno od ivica */
     display: flex;
     gap: 30px; /* Razmak između linkova */
-    align-items: center;
-    margin-left: auto; /* Pomera linkove udesno */
+    align-items: left;
+    /*margin-left: auto; /* Pomera linkove udesno */
 }
 
 /* Stil za linkove */
@@ -98,7 +98,7 @@ nav ul li a:hover {
 
 
 .logo-image img {
-    margin-left: 300px;
+    margin-left: 150px;
     width: 300px;
     height: auto;
     margin-top: 0px; /* Prostor ispod navbara */
