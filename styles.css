@@ -3,7 +3,7 @@ nav {
     background: linear-gradient(90deg, #8b6e3c, #C29F77, #A67C52); /* Tamnija smeđa zlatna boja sa metalik efektom */
     color: #ffffff;
     padding: 30px 0; /* Visina zlatne linije */
-    position: absolute;
+    position: flex;
     top: 0;
     width: 100%;
     z-index: 10;
