@@ -1,3 +1,22 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Osigurava da cela stranica zauzima visinu */
+}
+
+/* Osiguranje da header počinje od vrha */
+header {
+    margin-top: 0;
+    padding-top: 0;
+    position: relative;
+}
+
+/* Ako postoji razmak zbog drugih elemenata, možeš dodati i ovo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /* Stilizacija navigacije */
 nav {
     background: linear-gradient(90deg, #8b6e3c, #C29F77, #A67C52); /* Tamnija smeđa zlatna boja sa metalik efektom */
@@ -14,7 +33,6 @@ nav {
     justify-content: space-between; /* Razmak između logo-a i linkova */
     background-size: 400% 400%; /* Za bolje kretanje gradijenta */
     animation: gradientAnimation 4s ease infinite; /* Animacija za presijavanje */
-
 }
 
 @keyframes gradientAnimation {
@@ -29,7 +47,6 @@ nav {
     }
 }
 
-
 html, body {
     margin: 0;
     padding: 0;
@@ -38,7 +55,6 @@ html, body {
 
 /* Rezervisano mesto za logo */
 .logo-placeholder {
-    
     width: 10px; /* Širina rezervisana za logo */
     height: 10px; /* Visina rezervisana za logo */
 }
@@ -70,6 +86,60 @@ nav ul li a:hover {
     color: #FFD700; /* Svetlija zlatna nijansa za hover */
 }
 
+/* Osnovni stilovi za navigaciju */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+li {
+    margin: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Stilovi za padajući meni */
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+/* Skriva padajući meni dok se ne pređe mišem */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+/* Kada korisnik pređe mišem na dropdown, prikaži meni */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Promeni boju na hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
 
 /* Tamniji sloj preko slike */
 .header-image {
@@ -95,11 +165,326 @@ nav ul li a:hover {
     pointer-events: none; /* Sloj ne ometa interakcije sa slikom */
 }
 
-
-
 .logo-image img {
     margin-left: 150px;
     width: 300px;
     height: auto;
     margin-top: 0px; /* Prostor ispod navbara */
 }
+
+/* Stilizacija ikona u footer-u */
+footer {
+    display: flex;
+    justify-content: space-between; /* Razmak između ikona i mape */
+    align-items: center;
+    padding: 30px 50px;
+    background:linear-gradient(90deg, #8b6e3c, #C29F77, #A67C52);
+    color: #ffffff;
+    background-size: 400% 400%; /* Za bolje kretanje gradijenta */
+    animation: gradientAnimation 4s ease infinite; /* Animacija za presijavanje */
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column; /* Ikone idu vertikalno */
+    align-items: flex-start; /* Poravnaj ih sa leve strane */
+    margin-left: 100px;
+}
+
+.contact-details a {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    color: #333;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #FFD700;
+}
+
+.contact-details a i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Map styling */
+.map-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Poravnaj mapu desno */
+    margin-left: 150px;
+}
+
+.map-container iframe {
+    border-radius: 10px;
+    width: 750px;
+    height: 500px; /* Po želji možeš promeniti visinu mape */
+    position: relative;
+}
+
+/* Stilizacija sekcije */
+/* Stilizacija sekcije */
+/* Stilizacija sekcije Home */
+#home {
+    display: flex;
+    flex-direction: column; /* Postavljanje svih elemenata vertikalno */
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+
+/* Stilizacija kontejnera za tekst i sliku */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 50px; /* Razmak ispod sekcije sa tekstom i slikom */
+}
+
+/* Stil za tekst */
+.text-content {
+    flex: 1;
+    padding-right: 30px;
+    max-width: 50%; /* Tekst zauzima do pola ekrana */
+}
+
+.text-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.text-content .btn-more {
+    display: inline-block;
+    background-color: #FFD700;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.text-content .btn-more:hover {
+    background-color: #e6c100;
+}
+
+/* Stil za sliku */
+.image-content {
+    flex: 1;
+    max-width: 50%; /* Slika zauzima do druge polovine ekrana */
+    display: flex;
+    justify-content: center;
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Stilizacija za video */
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* Razmak od prethodne sekcije */
+}
+
+.video-container iframe {
+    border-radius: 10px;
+    width: 100%;  /* Video će zauzeti celu širinu */
+    max-width: 1200px;  /* Max širina da se ne proširi previše */
+}
+
+
+/* Stilizacija sekcije */
+#about-us {
+    display: flex;
+    flex-direction: column; /* Postavljanje svih elemenata vertikalno */
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+
+/* Stilizacija kontejnera za tekst i sliku */
+.about-us-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+/* Stil za sliku */
+.image-content {
+    flex: 1;
+    max-width: 50%; /* Slika zauzima do pola ekrana */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-content .header-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Maksimalna visina slike */
+    object-fit: cover; /* Osigurava da slika popuni prostor */
+    border-radius: 10px;
+}
+
+/* Stil za tekst */
+.text-content {
+    flex: 1;
+    max-width: 50%; /* Tekst zauzima drugu polovinu ekrana */
+    padding-left: 30px;
+}
+
+.text-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.text-content .btn-more {
+    display: inline-block;
+    background-color: #FFD700;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.text-content .btn-more:hover {
+    background-color: #e6c100;
+}
+
+/* Stilizacija za Nas Tim */
+.team-section {
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+    transition: transform 0.3s ease; /* Dodajte animaciju za uvećavanje sekcije */
+}
+
+.team-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.team-member {
+    width: 45%;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Dodajte animaciju za uvećanje svakog člana tima */
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+.team-member p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.team-member-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Dodajte animaciju za uvećanje slike */
+}
+
+/* Efekat za sliku kada je hover */
+.team-member-image:hover {
+    transform: scale(1.1);
+}
+
+/* Efekat za uvećanje svih članova tima kada pređete mišem */
+.team-section:hover {
+    transform: scale(1.05); /* Povećava celu sekciju za 5% */
+}
+
+.team-member:hover {
+    transform: scale(1.05); /* Povećava svaki član tima za 5% kada pređete mišem */
+}
+
+
+.company-gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.company-gallery {
+    text-align: center;
+    max-width: 1000px; /* Širina galerije može biti veća */
+    margin: auto;
+    position: relative;
+}
+
+.gallery-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 33.33%; /* Tri slike u redu */
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: 500px; /* Povećaj visinu slika, možeš da menjaš po želji */
+    object-fit: cover; /* Obavezivanje slika da popune prostor */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+

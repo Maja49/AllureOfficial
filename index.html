@@ -4,37 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Beauty studio">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="M&N">
     <title>AllureOfficial</title>
     <link rel="stylesheet" href="styles.css"> <!-- Spajanje CSS-a ako ga imate -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Dodaj Font Awesome -->
 </head>
 <body>
+    <div id="to-top">
+        <a href="#"  id="scroll-up-btn">
+            <i class="fa-solid fa-circle-arrow-up"></i>
+        </a>  
+    </div>
     <header>
         <nav>
             <div class="logo-image">
                 <img src="images/logo.png" alt="Logo">
-                
             </div>
             <ul>
                 <li><a href="index.html">Početna</a></li>
-                <li><a href="onama.html">O nama</a></li>
-                <li><a href="usluge.html">Usluge</a></li>
+                <li><a href="#about-us">O nama</a></li>
+                <li class="dropdown">
+                    <a href="usluge.html" class="dropbtn">Usluge</a>
+                    <div class="dropdown-content">
+                        <a href="#">Kosa</a>
+                        <a href="#">Šminka</a>
+                        <a href="#">Sprej ten</a>
+                    </div>
+                </li>
                 <li><a href="galerija.html">Galerija</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
+            
         </nav>
         <div class="header-image">
             <img src="images/headerImg.jpeg" alt="Hero slika">
         </div>
-        
     </header>
-    
+
     <main>
-        <p>Ovo je početak sajta!</p>
+        <!-- Region: home -->
+        <section id="home">
+            <div class="home-container">
+                <div class="text-content">
+                    <h1>Dobrodošli u našu kompaniju</h1>
+                    <p>
+                        Naša kompanija nudi najbolje usluge u industriji. Posvećeni smo kvalitetu i zadovoljstvu korisnika.
+                        Upoznajte nas i saznajte više o našim uslugama i misiji.
+                    </p>
+                    <a href="#about-us" class="btn-more">Saznajte više</a>
+                </div>
+                <div class="image-content">
+                    <img src="images/headerImg.jpeg" alt="Opis slike">
+                </div>
+            </div>
+            <!-- Video sekcija -->
+            <div class="video-container">
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+       <!-- End Region: home -->
+        
+       <!-- Region: about-us -->
+        <section id="about-us">
+            <div class="about-us-container">
+                <div class="image-content">
+                    <img src="images/headerImg.jpeg" alt="Allure Studio" class="header-image">
+                </div>
+                <div class="text-content">
+                    <h1>O Allure Studio</h1>
+                    <p>
+                        Allure Studio je prestižni studio koji se specijalizuje za pružanje visokokvalitetnih usluga u industriji lepote. Naša misija je da pružimo vrhunske tretmane u opuštajućem i luksuznom ambijentu, koristeći samo najnovije tehnologije i proizvode. Naš tim stručnjaka uvek je posvećen vašem zadovoljstvu i rezultatima.
+                    </p>
+                    <p>
+                        S više od 10 godina iskustva, Allure Studio je postao sinonim za kvalitet i luksuz. Uživajte u našim uslugama koje uključuju masaže, friziranje, manikir, pedikir i mnoge druge tretmane. Posetite nas i doživite luksuz koji pružamo.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Nas tim -->
+            <div class="team-section">
+                <h2>Naš Tim</h2>
+                <div class="team-container">
+                    <div class="team-member">
+                        <img src="images/headerImg.jpeg" alt="Marija Milic" class="team-member-image">
+                        <h3>Marija Milic</h3>
+                        <p>
+                            Marija Milic je stručnjak za friziranje sa više od 5 godina iskustva. Posvećena je pružanju savršenih frizura koje odgovaraju vašim željama i potrebama.
+                        </p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/headerImg.jpeg" alt="Darija Midic" class="team-member-image">
+                        <h3>Darija Midic</h3>
+                        <p>
+                            Darija Midic je stručnjak za masaže i wellness tretmane, sa posebnim fokusom na opuštanje i rejuvenaciju. Njen cilj je da svaki klijent napusti studio osećajući se obnovljeno i opušteno.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="company-gallery">
+                <h2>Naš Prostor</h2>
+                <div class="gallery-wrapper">
+                    <button class="prev">&#10094;</button>
+                    <div class="gallery">
+                        <div class="slide"><img src="images/headerImg.jpeg" alt="Slika 1"></div>
+                        <div class="slide"><img src="images/headerImg.jpeg" alt="Slika 2"></div>
+                        <div class="slide"><img src="images/headerImg.jpeg" alt="Slika 3"></div>
+                        <div class="slide"><img src="images/headerImg.jpeg" alt="Slika 4"></div>
+                        <div class="slide"><img src="images/headerImg.jpeg" alt="Slika 5"></div>
+                        <div class="slide"><img src="images/headerImg.jpeg" alt="Slika 6"></div>
+                    </div>
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+        
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const gallery = document.querySelector(".gallery");
+                    const prevBtn = document.querySelector(".prev");
+                    const nextBtn = document.querySelector(".next");
+                    let index = 0;
+        
+                    // Prebaci na sledeće tri slike
+                    nextBtn.addEventListener("click", function () {
+                        if (index < gallery.children.length - 3) { // Za tri slike
+                            index++;
+                            gallery.style.transform = `translateX(-${index * 33.33}%)`; // Pomeri za tri slike
+                        }
+                    });
+        
+                    // Prebaci na prethodne tri slike
+                    prevBtn.addEventListener("click", function () {
+                        if (index > 0) {
+                            index--;
+                            gallery.style.transform = `translateX(-${index * 33.33}%)`; // Pomeri za tri slike
+                        }
+                    });
+                });
+            </script>     
+        </section>
+        <!-- End Region: about-us -->
+
+        
+        
     </main>
+
     <footer>
-        <p>&copy; 2025. Sva prava zadržana.</p>
+        <div class="contact-info">
+            <div class="contact-details">
+                <a href="mailto:someone@example.com">
+                    <i class="fa-solid fa-envelope"></i> studio@allureofficial.rs
+                </a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank">
+                    <i class="fa-brands fa-instagram"></i> allureofficial.rs
+                </a>
+                <a href="https://goo.gl/maps/yourlocationlink" target="_blank">
+                    <i class="fa-solid fa-location-pin"></i> Location
+                </a>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125155.04938817883!2d20.9596!3d45.3309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475c8c10f1f0a07b%3A0xf6c898fbd6b7281a!2sRuma!5e0!3m2!1sen!2srs!4v1614794500285!5m2!1sen!2srs" width="750" height="500" style="border-radius: 10px; margin: 20px auto;"></iframe>
+        </div>        
     </footer>
+    
+
     <script src="script.js"></script> <!-- Spajanje JavaScript fajla ako ga imate -->
 </body>
 </html>
