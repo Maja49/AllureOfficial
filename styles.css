@@ -2,13 +2,20 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%; /* Osigurava da cela stranica zauzima visinu */
+    overflow-x: hidden;
 }
+
 
 /* Osiguranje da header počinje od vrha */
 header {
+    position: fixed; /* Da se header "lepi" za vrh stranice */
     margin-top: 0;
     padding-top: 0;
     position: relative;
+    background-color: rgba(0, 0, 0, 0.6); /* Tamna pozadina sa 60% providnosti */
+    z-index: 10; /* Da bude iznad slike */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Blaga senka za bolji kontrast */
+    
 }
 
 /* Ako postoji razmak zbog drugih elemenata, možeš dodati i ovo */
@@ -19,10 +26,10 @@ header {
 }
 /* Stilizacija navigacije */
 nav {
-    background: linear-gradient(90deg, #8b6e3c, #C29F77, #A67C52); /* Tamnija smeđa zlatna boja sa metalik efektom */
+    background: linear-gradient(90deg, rgba(139, 110, 60, 0.5), rgba(194, 159, 119, 0.5), rgba(166, 124, 82, 0.5)); /* Gradijent sa providnošću */
     color: #ffffff;
     padding: 30px 0; /* Visina zlatne linije */
-    position: flex;
+    position:absolute;
     top: 0;
     width: 100%;
     z-index: 10;
@@ -33,6 +40,7 @@ nav {
     justify-content: space-between; /* Razmak između logo-a i linkova */
     background-size: 400% 400%; /* Za bolje kretanje gradijenta */
     animation: gradientAnimation 4s ease infinite; /* Animacija za presijavanje */
+    
 }
 
 @keyframes gradientAnimation {
@@ -47,11 +55,6 @@ nav {
     }
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
 
 /* Rezervisano mesto za logo */
 .logo-placeholder {
@@ -63,27 +66,53 @@ html, body {
 nav ul {
     list-style: none;
     margin: 0;
-    padding: 0 100px; /* Razmak levo i desno od ivica */
+    padding: 0 60px; /* Razmak levo i desno od ivica */
     display: flex;
     gap: 30px; /* Razmak između linkova */
     align-items: left;
+    justify-content: center;
     /*margin-left: auto; /* Pomera linkove udesno */
 }
 
-/* Stil za linkove */
+/* Stil za navigaciju */
+nav ul li {
+    position: relative; /* Potrebno za apsolutno pozicioniranje linije */
+}
+
 nav ul li a {
     text-decoration: none;
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif; /* Jednostavan i lep font */
+    color: black;
+    font-family: 'Didone', 'serif'; /* Jednostavan i lep font */
     font-weight: 500;
     font-size: 16px;
+    z-index: 50;
+    opacity: 100;
     padding: 10px 20px; /* Unutrašnji razmak za bolju klikabilnost */
     letter-spacing: 1.5px; /* Razmak između slova */
     transition: color 0.3s ease; /* Animacija za hover */
+    position: relative; /* Omogućava pseudo-elementima da se pozicioniraju u okviru linka */
 }
 
+nav ul li a::after {
+    content: ""; /* Prazan sadržaj za liniju */
+    position: absolute;
+    background-color: #d39e00; /* Boja linije */
+    height: 2px; /* Debljina linije */
+    width: 0%; /* Početna širina linije */
+    bottom: 0; /* Linija ispod teksta */
+    left: 50%; /* Početak linije u centru */
+    transform: translateX(-50%); /* Centriranje linije ispod teksta */
+    transition: width 0.3s ease; /* Glatka animacija širenja linije */
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Linija zauzima celu širinu teksta */
+}
+
+
 nav ul li a:hover {
-    color: #FFD700; /* Svetlija zlatna nijansa za hover */
+    color: #d39e00; /* Svetlija zlatna nijansa za hover */
+    width: 100%;
 }
 
 /* Osnovni stilovi za navigaciju */
@@ -97,7 +126,6 @@ ul {
 li {
     margin: 0 15px;
 }
-
 a {
     text-decoration: none;
     color: #333;
@@ -117,15 +145,18 @@ a {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background: linear-gradient(90deg, rgba(139, 110, 60, 0.5), rgba(194, 159, 119, 0.5), rgba(166, 124, 82, 0.5)); /* Gradijent sa providnošću */
+    color: #ffffff;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 100;
+    bottom: -600%;   
 }
 
 /* Kada korisnik pređe mišem na dropdown, prikaži meni */
 .dropdown:hover .dropdown-content {
     display: block;
+    
 }
 
 .dropdown-content a {
@@ -137,7 +168,9 @@ a {
 
 /* Promeni boju na hover */
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background: linear-gradient(90deg, rgba(139, 110, 60, 0.5), rgba(194, 159, 119, 0.5), rgba(166, 124, 82, 0.5)); /* Gradijent sa providnošću */
+    color: #d39e00;
+    
 }
 
 
@@ -145,13 +178,63 @@ a {
 .header-image {
     position: relative; /* Neophodno za pseudo-element */
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .header-image img {
     width: 100%; /* Slika zauzima celu širinu */
     height: auto;
     display: block;
+    object-fit: cover; /* Osigurava da slika lepo popunjava prostor */
+    margin: 0; /* Nema razmaka na vrhu */
+    z-index: -1;
+    background-size: cover;
 }
+
+.textOnHeaderImg {
+    position: absolute;  /* Pozicionira tekst u odnosu na roditelja */
+    top: 42%;  /* Pozicionira tekst vertikalno u sredinu */
+    left: 79%;  /* Pozicionira tekst horizontalno u sredinu */
+    transform: translate(-50%, -50%);  /* Precizno centrira tekst */
+    color: rgba(85, 84, 97, 0.5);  /* Tekst sa providnošću */
+    font-size: 3rem;  /* Veličina fonta, prilagodite prema potrebama */
+    font-weight: bold;  /* Povećava debljinu fonta */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Dodaje senku za bolji kontrast */
+}
+
+.textOnHeaderImg2{
+    position: absolute;  /* Pozicionira drugi tekst u odnosu na roditelja */
+    top: 54%;  /* Pomeranje na 50% vertikalno */
+    left: 80%;  /* Pomeranje horizontalno */
+    transform: translate(-50%, -50%);  /* Precizno centrira tekst */
+    color: rgba(85, 84, 97, 0.5);  /* Tekst sa providnošću */
+    font-size: 2rem;  /* Veličina fonta veća od prethodnog */
+    font-weight: bold;  /* Povećava debljinu fonta */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Dodaje senku za bolji kontrast */
+    font-family: 'Charmonman', cursive;
+}
+
+.buttonOnHeader{
+    position: absolute;  /* Pozicionira dugme u odnosu na roditelja */
+    top: 60%;  /* Pomeranje na 65% vertikalno, ispod drugog teksta */
+    left: 82%;  /* Pomeranje horizontalno u centar */
+    transform: translateX(-50%);  /* Centriranje horizontalno */
+    padding: 5px 10px;  /* Povećanje prostora unutar dugmeta */
+    font-size: 1.1rem;  /* Veličina fonta za dugme */
+    font-weight: bold;  /* Deblji font */
+    color: #d7d5e1;  /* Boja teksta na dugmetu */
+    background-color: rgba(85, 84, 97, 0.4);  /* Providna pozadina dugmeta */
+    border: none;  /* Bez ivica */
+    border-radius: 5px;  /* Zaobljeni uglovi */
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);  /* Senka oko dugmeta */
+    cursor: pointer;  /* Prikazivanje kursora prilikom hovera */
+}
+
+.buttonOnHeader:hover {
+    background-color: rgba(85, 84, 97, 0.9);  /* Tamniji gradijent prilikom hovera */
+}
+
 
 .header-image::before {
     content: "";
@@ -178,7 +261,7 @@ footer {
     justify-content: space-between; /* Razmak između ikona i mape */
     align-items: center;
     padding: 30px 50px;
-    background:linear-gradient(90deg, #8b6e3c, #C29F77, #A67C52);
+    background: linear-gradient(90deg, rgba(139, 110, 60, 0.7), rgba(194, 159, 119, 0.7), rgba(166, 124, 82, 0.7)); /* Gradijent sa providnošću */
     color: #ffffff;
     background-size: 400% 400%; /* Za bolje kretanje gradijenta */
     animation: gradientAnimation 4s ease infinite; /* Animacija za presijavanje */
@@ -202,7 +285,7 @@ footer {
 }
 
 .contact-details a:hover {
-    color: #FFD700;
+    color: #d39e00;
 }
 
 .contact-details a i {
@@ -220,8 +303,8 @@ footer {
 
 .map-container iframe {
     border-radius: 10px;
-    width: 750px;
-    height: 500px; /* Po želji možeš promeniti visinu mape */
+    width: 600px;
+    height: 300px; /* Po želji možeš promeniti visinu mape */
     position: relative;
 }
 
