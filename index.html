@@ -12,15 +12,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Dodaj Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Charmonman&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="script.js"></script> <!-- Spajanje JavaScript fajla ako ga imate -->
 
 
 </head>
 <body>
     <div id="to-top">
-        <a href="#"  id="scroll-up-btn">
+        <a href="#" id="scroll-up-btn">
             <i class="fa-solid fa-circle-arrow-up"></i>
         </a>  
     </div>
+    
     <header>
         <nav>
             <div class="logo-image">
@@ -42,6 +45,19 @@
             </ul>
             
         </nav>
+        <nav class="mobile-nav">
+            <img src="images/logo.png" alt="Logo" class="mobile-logo">
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu" style="display: none;">
+            <ul>
+                <li><a href="#">Početna</a></li>
+                <li><a href="#">O nama</a></li>
+                <li><a href="#">Usluge</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </div>
+        
         <hr></hr>
         <div class="header-image">
             <img src="images/headerImg.jpeg" alt="Hero slika">

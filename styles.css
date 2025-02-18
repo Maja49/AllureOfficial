@@ -5,7 +5,6 @@ html, body {
     overflow-x: hidden;
 }
 
-
 /* Osiguranje da header počinje od vrha */
 header {
     position: fixed; /* Da se header "lepi" za vrh stranice */
@@ -255,6 +254,151 @@ a {
     margin-top: 0px; /* Prostor ispod navbara */
 }
 
+/*******************HAMBURGER MENU******************************/
+@media (max-width: 768px) {
+    nav { 
+        display: none; /* Sakrij desktop meni na mobilnim uređajima */
+    }
+/* Hamburger meni - mobilna verzija */
+/* Po defaultu sakrij mobilni meni na većim ekranima */
+/* Stil za mobilni meni na velikim ekranima */
+.mobile-nav {
+    display: none; /* Sakrivanje mobilnog menija na velikim ekranima */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(139, 110, 60, 0.5), rgba(194, 159, 119, 0.5), rgba(166, 124, 82, 0.5));
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.mobile-logo {
+    height: 40px;
+}
+
+.textOnHeaderImg {
+    position: absolute;  /* Pozicionira tekst u odnosu na roditelja */
+    top: 42%;  /* Pozicionira tekst vertikalno u sredinu */
+    left: 79%;  /* Pozicionira tekst horizontalno u sredinu */
+    transform: translate(-50%, -50%);  /* Precizno centrira tekst */
+    color: rgba(85, 84, 97, 0.5);  /* Tekst sa providnošću */
+    font-size: 0.8rem;  /* Veličina fonta, prilagodite prema potrebama */
+    font-weight: bold;  /* Povećava debljinu fonta */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Dodaje senku za bolji kontrast */
+}
+
+.textOnHeaderImg2{
+    position: absolute;  /* Pozicionira drugi tekst u odnosu na roditelja */
+    top: 54%;  /* Pomeranje na 50% vertikalno */
+    left: 80%;  /* Pomeranje horizontalno */
+    transform: translate(-50%, -50%);  /* Precizno centrira tekst */
+    color: rgba(85, 84, 97, 0.5);  /* Tekst sa providnošću */
+    font-size: 0.5rem;  /* Veličina fonta veća od prethodnog */
+    font-weight: bold;  /* Povećava debljinu fonta */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Dodaje senku za bolji kontrast */
+    font-family: 'Charmonman', cursive;
+}
+
+.buttonOnHeader{
+    position: absolute;  /* Pozicionira dugme u odnosu na roditelja */
+    top: 60%;  /* Pomeranje na 65% vertikalno, ispod drugog teksta */
+    left: 82%;  /* Pomeranje horizontalno u centar */
+    transform: translateX(-50%);  /* Centriranje horizontalno */
+    padding: 5px 10px;  /* Povećanje prostora unutar dugmeta */
+    font-size: 0.3rem;  /* Veličina fonta za dugme */
+    font-weight: bold;  /* Deblji font */
+    color: #d7d5e1;  /* Boja teksta na dugmetu */
+    background-color: rgba(85, 84, 97, 0.4);  /* Providna pozadina dugmeta */
+    border: none;  /* Bez ivica */
+    border-radius: 5px;  /* Zaobljeni uglovi */
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);  /* Senka oko dugmeta */
+    cursor: pointer;  /* Prikazivanje kursora prilikom hovera */
+}
+
+.hamburger {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Tamna pozadina */
+    color: white;
+    text-align: center;
+    z-index: 999;
+    padding-top: 60px; /* Prostor za logo i dugme */
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    gap: 30px;
+}
+
+.mobile-menu ul li {
+    padding: 15px;
+    position: relative;
+}
+
+.mobile-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Didone', 'serif';
+    font-size: 18px;
+    display: block;
+    padding: 10px 20px;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+.mobile-menu ul li a::after {
+    content: ""; /* Prazan sadržaj za liniju */
+    position: absolute;
+    background-color: #d39e00; /* Boja linije */
+    height: 2px; /* Debljina linije */
+    width: 0%; /* Početna širina linije */
+    bottom: 0; /* Linija ispod teksta */
+    left: 50%; /* Početak linije u centru */
+    transform: translateX(-50%); /* Centriranje linije ispod teksta */
+    transition: width 0.3s ease; /* Glatka animacija širenja linije */
+}
+.mobile-menu ul li a:hover::after {
+    width: 100%; /* Linija zauzima celu širinu teksta */
+}
+
+
+.mobile-menu ul li a:hover {
+    color: #d39e00; /* Svetlija zlatna nijansa za hover */
+    width: 100%;
+}
+}
+
+/* Media query za male ekrane (mobilni uređaji) */
+@media (min-width: 769px) {
+    .mobile-nav, .mobile-menu { 
+        display: none;  /* Sakrij mobilni meni na desktopu */
+    }
+
+    nav {
+        display: flex; /* Prikaži desktop meni */
+    }
+}
+
+
 /* Stilizacija ikona u footer-u */
 footer {
     display: flex;
@@ -308,6 +452,33 @@ footer {
     position: relative;
 }
 
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Poravnaj sve elemente u vertikalni red */
+        padding: 20px 20px;
+    }
+
+    .contact-info {
+        margin-left: 0;
+        margin-bottom: 20px; /* Razmak između kontakt info i mape */
+        align-items: center; /* Centriraj ikone */
+    }
+
+    .contact-details a {
+        font-size: 16px; /* Smanji font na mobilnim uređajima */
+    }
+
+    .map-container {
+        margin-left: 0;
+        width: 100%; /* Mapa će zauzeti celu širinu */
+        justify-content: center; /* Centriraj mapu */
+    }
+
+    .map-container iframe {
+        width: 100%; /* Mapa sada zauzima 100% širine */
+        height: 250px; /* Smanji visinu mape na mobilnim uređajima */
+    }
+}
 /* Stilizacija sekcije */
 /* Stilizacija sekcije */
 /* Stilizacija sekcije Home */
