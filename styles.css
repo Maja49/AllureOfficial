@@ -5,6 +5,7 @@ html, body {
     overflow-x: hidden;
 }
 
+
 /* Osiguranje da header počinje od vrha */
 header {
     position: fixed; /* Da se header "lepi" za vrh stranice */
@@ -482,6 +483,11 @@ footer {
 /* Stilizacija sekcije */
 /* Stilizacija sekcije */
 /* Stilizacija sekcije Home */
+
+#home section {
+    background-color: #e8e1d3;
+}
+
 #home {
     display: flex;
     flex-direction: column; /* Postavljanje svih elemenata vertikalno */
@@ -558,6 +564,68 @@ footer {
     max-width: 1200px;  /* Max širina da se ne proširi previše */
 }
 
+/* Media Query za mobilne uređaje */
+@media (max-width: 768px) {
+    /* Postavka za home sekciju da se sve slaže u koloni */
+    #home {
+        display: flex;
+        flex-direction: column; /* Svi elementi će biti jedan ispod drugog */
+        padding: 20px; /* Dodaj padding oko sadržaja */
+    }
+
+    /* home-container se takođe postavlja u kolonu */
+    .home-container {
+        display: flex;
+        flex-direction: column; /* Postavlja sve elemente u vertikalni raspored */
+        align-items: center; /* Centriranje elemenata */
+        width: 100%; /* Maksimalna širina */
+        margin-bottom: 20px; /* Razmak ispod home-container */
+    }
+
+    /* Postavka za tekst: Centriraj i proširi na celu širinu */
+    .text-content {
+        max-width: 100%; /* Tekst zauzima celu širinu ekrana */
+        text-align: center; /* Centriranje teksta */
+        padding-right: 0; /* Uklanjanje paddinga sa desne strane */
+        margin-bottom: 20px; /* Razmak ispod teksta */
+    }
+
+    /* Smanjivanje fonta za mobilne uređaje */
+    .text-content h1 {
+        font-size: 1.5rem; /* Manji font za naslov */
+    }
+
+    .text-content p {
+        font-size: 1rem; /* Manji font za paragraf */
+    }
+
+    /* Slika sada zauzima celu širinu ekrana i pojavljuje se ispod teksta */
+    .image-content {
+        max-width: 100%; /* Slika zauzima celu širinu ekrana */
+        margin-top: 20px; /* Razmak između teksta i slike */
+        display: flex;
+        justify-content: center; /* Centriranje slike */
+    }
+
+    .image-content img {
+        width: 100%; /* Slika zauzima 100% širine ekrana */
+        height: auto; /* Održavanje proporcija slike */
+    }
+
+    /* Postavljanje video sekcije da bude ispod slike */
+    .video-container {
+        margin-top: 30px; /* Razmak od prethodne sekcije */
+        width: 100%; /* Video će zauzeti celu širinu ekrana */
+    }
+
+    .video-container iframe {
+        width: 100%; /* Širina videa */
+        height: 200px; /* Manja visina videa na manjim ekranima */
+    }
+}
+
+
+
 
 /* Stilizacija sekcije */
 #about-us {
@@ -613,7 +681,10 @@ footer {
 
 .text-content .btn-more {
     display: inline-block;
-    background-color: #FFD700;
+    color: #d7d5e1;  /* Boja teksta na dugmetu */
+    background-color: rgba(85, 84, 97, 0.4);  /* Providna pozadina dugmeta */
+    border-radius: 5px;  /* Zaobljeni uglovi */
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);  /* Senka oko dugmeta */
     padding: 10px 20px;
     text-decoration: none;
     color: #333;
