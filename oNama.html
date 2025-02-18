@@ -11,12 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Charmonman&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="../script.js"></script> <!-- Spajanje JavaScript fajla ako ga imate -->
+    <li><a href="../index.html">POČETNA</a></li>
+
 </head>
 <body>
     <header>
         <nav>
             <div class="logo-image">
-                <img src="../images/logo.png" alt="Logo">
+                <img src="images/logo.png" alt="Logo">
             </div>
             <ul>
                 <li><a href="index.html">POČETNA</a></li>
@@ -35,7 +37,7 @@
             
         </nav>
         <nav class="mobile-nav">
-            <img src="../images/logo.png" alt="Logo" class="mobile-logo">
+            <img src="images/logo.png" alt="Logo" class="mobile-logo">
             <button class="hamburger" onclick="toggleMenu()">☰</button>
         </nav>
         <div class="mobile-menu" id="mobileMenu" style="display: none;">
@@ -49,16 +51,17 @@
         
         <hr></hr>
         <div class="header-image">
-            <img src="../images/headerImg.jpeg" alt="Hero slika">
+            <img src="images/headerImg.jpeg" alt="Hero slika">
                 <p class="textOnHeaderImg">Allure Studio</p>
                 <p class="textOnHeaderImg2">Tamo gde lepota pocinje ...</p>
                 <button class="buttonOnHeader">Saznajte vise</button>
         </div>
     </header>
+    
     <section id="about-us">
         <div class="about-us-container">
             <div class="image-content">
-                <img src="../images/headerImg.jpeg" alt="Allure Studio" class="header-image">
+                <img src="images/headerImg.jpeg" alt="Allure Studio" class="header-image">
             </div>
             <div class="text-content">
                 <h1>O Allure Studio</h1>
@@ -76,14 +79,14 @@
             <h2>Naš Tim</h2>
             <div class="team-container">
                 <div class="team-member">
-                    <img src="../images/headerImg.jpeg" alt="Marija Milic" class="team-member-image">
+                    <img src="images/headerImg.jpeg" alt="Marija Milic" class="team-member-image">
                     <h3>Marija Milic</h3>
                     <p>
                         Marija Milic je stručnjak za friziranje sa više od 5 godina iskustva. Posvećena je pružanju savršenih frizura koje odgovaraju vašim željama i potrebama.
                     </p>
                 </div>
                 <div class="team-member">
-                    <img src="../images/headerImg.jpeg" alt="Darija Midic" class="team-member-image">
+                    <img src="images/headerImg.jpeg" alt="Darija Midic" class="team-member-image">
                     <h3>Darija Midic</h3>
                     <p>
                         Darija Midic je stručnjak za masaže i wellness tretmane, sa posebnim fokusom na opuštanje i rejuvenaciju. Njen cilj je da svaki klijent napusti studio osećajući se obnovljeno i opušteno.
@@ -96,18 +99,41 @@
             <div class="gallery-wrapper">
                 <button class="prev">&#10094;</button>
                 <div class="gallery">
-                    <div class="slide"><img src="../images/headerImg.jpeg" alt="Slika 1"></div>
-                    <div class="slide"><img src="../images/headerImg.jpeg" alt="Slika 2"></div>
-                    <div class="slide"><img src="../images/headerImg.jpeg" alt="Slika 3"></div>
-                    <div class="slide"><img src="../images/headerImg.jpeg" alt="Slika 4"></div>
-                    <div class="slide"><img src="../images/headerImg.jpeg" alt="Slika 5"></div>
-                    <div class="slide"><img src="../images/headerImg.jpeg" alt="Slika 6"></div>
+                    <div class="slide"><img src="images/headerImg.jpeg" alt="Slika 1"></div>
+                    <div class="slide"><img src="images/headerImg.jpeg" alt="Slika 2"></div>
+                    <div class="slide"><img src="images/headerImg.jpeg" alt="Slika 3"></div>
+                    <div class="slide"><img src="images/headerImg.jpeg" alt="Slika 4"></div>
+                    <div class="slide"><img src="images/headerImg.jpeg" alt="Slika 5"></div>
+                    <div class="slide"><img src="images/headerImg.jpeg" alt="Slika 6"></div>
                 </div>
                 <button class="next">&#10095;</button>
             </div>
         </div>
     
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const gallery = document.querySelector(".gallery");
+                const prevBtn = document.querySelector(".prev");
+                const nextBtn = document.querySelector(".next");
+                let index = 0;
     
+                // Prebaci na sledeće tri slike
+                nextBtn.addEventListener("click", function () {
+                    if (index < gallery.children.length - 3) { // Za tri slike
+                        index++;
+                        gallery.style.transform = `translateX(-${index * 33.33}%)`; // Pomeri za tri slike
+                    }
+                });
+    
+                // Prebaci na prethodne tri slike
+                prevBtn.addEventListener("click", function () {
+                    if (index > 0) {
+                        index--;
+                        gallery.style.transform = `translateX(-${index * 33.33}%)`; // Pomeri za tri slike
+                    }
+                });
+            });
+        </script>     
     </section>
     <!-- End Region: about-us -->
 
