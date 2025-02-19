@@ -1,8 +1,14 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Osigurava da cela stranica zauzima visinu */
+    min-height: 2000px;
     overflow-x: hidden;
+    
+}
+
+.main-content {
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 
@@ -770,7 +776,7 @@ footer {
 }
 .company-gallery {
     text-align: center;
-    max-width: 3000px; /* Širina galerije može biti veća */
+    max-width: 100%; /* Širina galerije može biti veća */
     margin: auto;
     position: relative;
 }
@@ -839,242 +845,99 @@ footer {
     z-index: 1; /* Logo se vidi preko pozadine */
 }
 
-#marijaKontakt {
+/* Sekcija kontakta */
+#kontaktSekcija {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin: 100px auto;
+    max-width: 2000px;
+}
+
+/* Stil za pojedinačnu karticu */
+.kontaktKartica {
     display: flex;
     flex-direction: column;
-    align-items: left;
-    margin: 20px;
+    align-items: center;
+    text-align: center;
+    width: 700px;
+    margin: 50px;
 }
 
-.marijinaSlikaKontakt {
-    width: 100%;
-    max-width: 300px;
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.marijinaSlikaKontakt img {
-    width: 100%;
-    height: auto;
+.kontaktKartica img {
+    width: 300%;
+    height: 600%;
+    object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.kontaktIspodSlike {
-    width: 100%;
-    text-align: left;
-    padding: 20px;
-}
-
-.kontaktIspodSlike a {
-    display: inline-flex;
-    align-items: center;
-    margin-bottom: 10px;
-    text-decoration: none;
+.kontaktKartica h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
     color: #333;
-    font-size: 16px;
+    font-weight: bold;
 }
 
-.kontaktIspodSlike a i {
-    margin-right: 10px;
-    font-size: 18px;
-    color: #555;
-}
-
-.kontaktIspodSlike a:hover {
-    color: #0073e6;
-}
-
-.kontaktIspodSlike a:hover i {
-    color: #0073e6;
-}
-
-.instaIspodSlike{
-    width: 100%;
-    text-align: left;
-    padding: 20px;
-}
-
-.instaIspodSlike a {
-    display: inline-flex;
-    align-items: center;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-}
-
-.instaIspodSlike a i {
-    margin-right: 10px;
-    font-size: 18px;
-    color: #555;
-}
-
-.instaIspodSlike a:hover {
-    color: #0073e6;
-}
-
-.instaIspodSlike a:hover i {
-    color: #0073e6;
-}
-
-#marijaKontakt {
+/* Informacije ispod slike */
+.kontaktInfo {
+    margin-top: 10px;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: left;
-    margin: 20px;
+    gap: 5px;
 }
 
-.marijinaSlikaKontakt {
-    width: 100%;
-    max-width: 300px;
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.marijinaSlikaKontakt img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.kontaktIspodSlike {
-    width: 100%;
-    text-align: left;
-    padding: 20px;
-}
-
-.kontaktIspodSlike a {
-    display: inline-flex;
-    align-items: center;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-}
-
-.kontaktIspodSlike a i {
-    margin-right: 10px;
-    font-size: 18px;
-    color: #555;
-}
-
-.kontaktIspodSlike a:hover {
-    color: #0073e6;
-}
-
-.kontaktIspodSlike a:hover i {
-    color: #0073e6;
-}
-
-.instaIspodSlike {
-    width: 100%;
-    text-align: left;
-    padding: 20px;
-}
-
-.instaIspodSlike a {
-    display: inline-flex;
-    align-items: center;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-}
-
-.instaIspodSlike a i {
-    margin-right: 10px;
-    font-size: 18px;
-    color: #555;
-}
-
-.instaIspodSlike a:hover {
-    color: #0073e6;
-}
-
-.instaIspodSlike a:hover i {
-    color: #0073e6;
-}
-
-#darijaKontakt {
+.kontaktInfo a {
     display: flex;
-    flex-direction: column;
-    align-items: right;
-    margin: 20px;
-}
-
-.darijinaSlikaKontakt {
-    width: 100%;
-    max-width: 300px;
-    text-align: right;
-    margin-bottom: 20px;
-}
-
-.darijinaSlikaKontakt img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    text-align: right;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.kontaktIspodSlikeDarija {
-    width: 100%;
-    text-align: right;
-    padding: 20px;
-}
-
-.kontaktIspodSlikeDarija a {
-    display: inline-flex;
     align-items: center;
-    margin-bottom: 10px;
+    gap: 5px;
     text-decoration: none;
     color: #333;
-    font-size: 16px;
+    font-weight: bold;
 }
 
-.kontaktIspodSlikeDarija a i {
-    margin-right: 10px;
-    font-size: 18px;
-    color: #555;
+.kontaktInfo a i {
+    color: #c13584; /* Instagram ljubičasta boja */
 }
 
-.kontaktIspodSlikeDarija a:hover {
-    color: #0073e6;
+/* Responsivnost */
+@media (max-width: 768px) {
+    #kontaktSekcija {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kontaktKartica {
+        width: 100%;
+        max-width: 400px;
+    }
 }
 
-.kontaktIspodSlikeDarija a:hover i {
-    color: #0073e6;
-}
-
-.instaIspodSlikeDarija {
-    width: 100%;
-    text-align: right;
-    padding: 20px;
-}
-
-.instaIspodSlikeDarija a {
-    display: inline-flex;
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    display: flex; /* Promeni sa none na flex */
     align-items: center;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
-.instaIspodSlikeDarija a i {
-    margin-right: 10px;
-    font-size: 18px;
-    color: #555;
-}
 
-.instaIspodSlikeDarija a:hover {
-    color: #0073e6;
-}
 
-.instaIspodSlikeDarija a:hover i {
-    color: #0073e6;
+.scroll-to-top:hover {
+    background-color: #555;
+    
 }
 
 
