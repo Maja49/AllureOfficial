@@ -433,6 +433,7 @@ footer {
     font-size: 18px;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-family: 'Didone', 'serif';
 }
 
 .contact-details a:hover {
@@ -521,11 +522,13 @@ footer {
 .text-content h1 {
     font-size: 2rem;
     margin-bottom: 20px;
+    font-family: 'Didone', 'serif';
 }
 
 .text-content p {
     font-size: 1.1rem;
     line-height: 1.6;
+    font-family: 'Didone', 'serif';
 }
 
 .text-content .btn-more {
@@ -537,6 +540,7 @@ footer {
     font-weight: bold;
     margin-top: 20px;
     transition: background-color 0.3s ease;
+    font-family: 'Didone', 'serif';
 }
 
 .text-content .btn-more:hover {
@@ -630,7 +634,88 @@ footer {
     }
 }
 
+/* kad je telefon onda ne prikazuje sve slike vec samo jednu koja vodi do stranice sa svim ostalim slikama*/
+@media (max-width: 768px){
+    #about-us {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+    }
 
+    .about-us-container {
+        max-width: 600px;
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-content {
+        max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .image-content {
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+        margin-left: 30%;
+    }
+
+    .gallery-wrapper {
+        display: none; /* Sakriva slajder na mobilnim uređajima */
+    }
+
+    .mobile-album {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .mobile-album img {
+        width: 80%;
+        max-width: 300px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-album img:hover {
+        transform: scale(1.05);
+    }
+
+    .mobile-album p {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .short-text {
+        max-height: 3.2em; /* Oko 2 reda teksta */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: max-height 0.3s ease-in-out;
+    }
+    
+    .short-text.expanded {
+        max-height: 100px; /* Prilagodi visinu za prošireni tekst */
+    }
+}
+
+
+
+@media (min-width: 769px) {
+    .mobile-album{ 
+        display: none;  /* Sakrij mobilni meni na desktopu */
+    }
+}
 
 
 /* Stilizacija sekcije */
@@ -678,11 +763,13 @@ footer {
 .text-content h1 {
     font-size: 2rem;
     margin-bottom: 20px;
+    font-family: 'Didone', 'serif';
 }
 
 .text-content p {
     font-size: 1.1rem;
     line-height: 1.6;
+    font-family: 'Didone', 'serif';
 }
 
 .text-content .btn-more {
@@ -697,6 +784,7 @@ footer {
     font-weight: bold;
     margin-top: 20px;
     transition: background-color 0.3s ease;
+    font-family: 'Didone', 'serif';
 }
 
 .text-content .btn-more:hover {
@@ -715,6 +803,7 @@ footer {
     font-size: 2rem;
     margin-bottom: 30px;
     font-weight: bold;
+    font-family: 'Didone', 'serif';
 }
 
 .team-container {
@@ -737,12 +826,14 @@ footer {
     font-size: 1.5rem;
     margin-top: 20px;
     color: #333;
+    font-family: 'Didone', 'serif';
 }
 
 .team-member p {
     font-size: 1.1rem;
     color: #666;
     margin-top: 10px;
+    font-family: 'Didone', 'serif';
 }
 
 .team-member-image {
@@ -773,6 +864,7 @@ footer {
     font-size: 2rem;
     margin-bottom: 30px;
     font-weight: bold;
+    font-family: 'Didone', 'serif';
 }
 .company-gallery {
     text-align: center;
